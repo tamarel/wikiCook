@@ -22,5 +22,16 @@ Technology</b><br>
 ASP.NET MVC 5 + Razor + HTML + datastore <br>
 </p>
 
+<b>Main site</b><br>
+[main](https://github.com/tamarel/wikiCook)
+
+<b>wikiCook Team</b><br>
+[team](https://github.com/tamarel/wikiCook/wiki/TEAM)
+<br>
+
+<b>Documentation</b><br>
+[Idea](https://www.dropbox.com/s/a2ntw43njvhx9te/SOW.docx?dl=0)<br>
+[Presentation ](https://www.dropbox.com/s/46oob3z05ej6cdd/wikiCook.pptx?dl=0)
+
 
 
