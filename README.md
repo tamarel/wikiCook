@@ -8,7 +8,7 @@ Project name: <b>wikiCook</b><br>
 Project logo:<br>
 </p>
 
-![TeacMe logo](http://upng.co.il/image/1427021182)
+![wikiCook logo]([URL="http://upng.co.il"][IMG]http://upng.co.il/uploads/4eb14c5367129ee22e74c863b7b7aaa3.png[/IMG][/URL])
 
 <p>
 <b>About</b><br>
