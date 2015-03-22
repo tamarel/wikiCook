@@ -8,7 +8,7 @@ Project name: <b>wikiCook</b><br>
 Project logo:<br>
 </p>
 
-![wikiCook logo](<a href="http://upng.co.il" title="העלאת תמונות" rel="follow"><img src="http://upng.co.il/uploads/4eb14c5367129ee22e74c863b7b7aaa3.png" alt="העלאת תמונות, העלאת תמונה" title="העלאת תמונות" /></a>)
+![wikiCook logo](http://upng.co.il/uploads/4eb14c5367129ee22e74c863b7b7aaa3.png)
 
 <p>
 <b>About</b><br>
