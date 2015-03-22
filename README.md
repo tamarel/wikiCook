@@ -14,9 +14,11 @@ Project logo:<br>
 <b>About</b><br>
 wikiCook is a platform for everyone who wants to cook ,step by step simply and easy .
 </p>
-
+</p>
 <p>
-<b>wikiCook is a platform for everyone who wants to cook ,step by step simply and easy . Technology</b><br>
+<b>wikiCook is a platform for everyone who wants to cook ,step by step simply and easy . 
+
+Technology</b><br>
 ASP.NET MVC 5 + Razor + HTML + datastore <br>
 </p>
 
