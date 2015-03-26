@@ -23,7 +23,7 @@ python + css + HTML + datastore <br>
 </p>
 
 <b>Main site</b><br>
-[main](https://github.com/tamarel/wikiCook)
+[home](https://github.com/tamarel/wikiCook/wiki)
 
 <b>wikiCook Team</b><br>
 [team](https://github.com/tamarel/wikiCook/wiki/TEAM)
