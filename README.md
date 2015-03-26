@@ -19,7 +19,7 @@ wikiCook is a platform for everyone who wants to cook ,step by step simply and e
 <b>wikiCook is a platform for everyone who wants to cook ,step by step simply and easy . 
 <p>
 Technology</b><br>
-ASP.NET MVC 5 + Razor + HTML + datastore <br>
+python + css + HTML + datastore <br>
 </p>
 
 <b>Main site</b><br>
