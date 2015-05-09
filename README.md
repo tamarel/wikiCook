@@ -37,6 +37,6 @@ python + css + HTML + datastore <br>
 [ZFR](https://github.com/tamarel/wikiCook/wiki/SDS)<br>
 
 <b>wiki-Cook web site</b><br>
-[wiki-cook](https://http://wiki-cook.appspot.com)
+[wiki-cook](https://wiki-cook.appspot.com)
 <br>
 
