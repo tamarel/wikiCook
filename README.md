@@ -14,6 +14,9 @@ Project logo:<br>
 <b>About</b><br>
 wikiCook is a platform for everyone who wants to cook ,step by step simply and easy .
 </p>
+<b>Our Product</b><br>
+[wikiCook](http://wiki-cook.appspot.com/)
+
 </p>
 <p>
 <b>wikiCook is a platform for everyone who wants to cook ,step by step simply and easy . 
