@@ -56,11 +56,12 @@
 				<div id="content">
 					<div>
 						<div  dir="rtl">
-						<a>אנא כתוב את המתכון</a>
+					
 						<br>
 						<br>
-						<textarea name="comments" cols="25" rows="1"></textarea><br>
-שם המתכון
+						השם של המתכון<br>
+						<textarea name="comments" cols="25" rows="1"></textarea>
+
 </textarea><br>
 <br>
 <br>
@@ -71,10 +72,20 @@
 </select>
 							<form method="post" action="">
 						<textarea name="comments" cols="50" rows="25">
-Enter your comments here...
+הכנס מתכון , תן מספר לכל שלב במתכון,אחרי סיום כל שלב רד שורה
 </textarea><textarea name="comments" cols="20" rows="25">
-מצרכים
-</textarea><br>
+הכנס מצרכים , כל מצרך בשורה נפרדת 
+</textarea><br><br><br><br>
+<form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi"
+enctype="multipart/form-data" method="post">
+<p>
+<input type="submit" value="העלה תמונה">
+<input type="file" name="datafile" size="40">
+</p>
+<div>
+
+</div>
+</form>
 <br>
 <br>
 						<a>אנא בנה את הסימולציה למתכון</a>
@@ -84,6 +95,7 @@ Enter your comments here...
 <textarea name="comments" cols="25" rows="5">
 Enter your comments here...
 </textarea><br>
+
 <input type="submit" value="אשר שלב" />
 <input type="submit" value="הוסף טיימר" />
 <br>
