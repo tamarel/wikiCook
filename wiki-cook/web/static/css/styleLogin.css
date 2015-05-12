@@ -1,0 +1,270 @@
+/*login*/
+
+.login {
+  position: relative;
+  margin: 80px auto;
+  width: 400px;
+  padding-right: 32px;
+  font-weight: 300;
+  color: #a8a7a8;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+.login p {
+  margin: 0 0 10px;
+}
+
+input, button, label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=password] {
+  padding: 0 10px;
+  width: 300px;
+  height: 40px;
+  color: #bbb;
+  text-shadow: 1px 1px 1px black;
+  background: rgba(0, 0, 0, 0.16);
+  border: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+}
+input[type=text]:focus, input[type=password]:focus {
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  outline: 0;
+}
+
+label {
+color: white;
+  float: left;
+  width: 100px;
+  line-height: 40px;
+  padding-right: 10px;
+  font-weight: 100;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.forgot-password {
+  padding-left: 100px;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.login-submit {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border-radius: 32px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+}
+.login-submit:before, .login-submit:after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+}
+.login-submit:before {
+  top: 28px;
+  left: -4px;
+  width: 4px;
+  height: 10px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
+}
+.login-submit:after {
+  top: -4px;
+  bottom: -4px;
+  right: -4px;
+  width: 36px;
+}
+
+.login-button {
+  position: relative;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  margin-top:270px;
+  margin-left:-90px;
+  padding: 0 0 48px;
+  /* Fix wrong positioning in Firefox 9 & older (bug 450418) */
+  text-indent: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: none;
+  border: 0;
+  border-radius: 24px;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
+  /* Must use another pseudo element for the gradient background because Webkit */
+  /* clips the background incorrectly inside elements with a border-radius.     */
+}
+.login-button:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  background: #000;
+  border-radius: 24px;
+  background-image: -webkit-linear-gradient(top, #000, #66FF33);
+  background-image: -moz-linear-gradient(top, #000, #66FF33);
+  background-image: -o-linear-gradient(top, #000, #66FF33);
+  background-image: linear-gradient(to bottom, #000, #66FF33);
+  -webkit-box-shadow: inset 0 0 0 1px #000, 0 0 0 5px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 0 0 0 1px #000, 0 0 0 5px rgba(0, 0, 0, 0.16);
+}
+.login-button:active:before {
+  background: #000;
+  background-image: -webkit-linear-gradient(top, #0591ba, #00a2d3);
+  background-image: -moz-linear-gradient(top, #0591ba, #00a2d3);
+  background-image: -o-linear-gradient(top, #0591ba, #00a2d3);
+  background-image: linear-gradient(to bottom, #0591ba, #00a2d3);
+}
+.login-button:after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  width: 25px;
+  height: 19px;
+  background: url(../img/arrow.png) center top no-repeat;
+}
+
+
+/* sign*/
+
+ #registration a {
+      color: #8c910b;
+      text-shadow: 0px -1px 0px #000;
+      }
+	  
+#registration fieldset {
+      padding: 20px;
+      }
+	  
+input.text {
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      border:solid 1px #444;
+      font-size: 14px;
+      width: 90%;
+      padding: 7px 8px 7px 30px;
+      -moz-box-shadow: 0px 1px 0px #777;
+      -webkit-box-shadow: 0px 1px 0px #777;
+	  background: #ddd url('img/inputSprite.png') no-repeat 4px 5px;
+	  background: url('img/inputSprite.png') no-repeat 4px 5px, -moz-linear-gradient(
+           center bottom,
+           rgb(225,225,225) 0%,
+           rgb(215,215,215) 54%,
+           rgb(173,173,173) 100%
+           );
+	  background:  url('img/inputSprite.png') no-repeat 4px 5px, -webkit-gradient(
+          linear,
+          left bottom,
+          left top,
+          color-stop(0, rgb(225,225,225)),
+          color-stop(0.54, rgb(215,215,215)),
+          color-stop(1, rgb(173,173,173))
+          );
+      color:#333;
+      text-shadow:0px 1px 0px #FFF;
+}	  
+
+ input#email { 
+ 	background-position: 4px 5px; 
+	background-position: 4px 5px, 0px 0px;
+	}
+	
+ input#password { 
+ 	background-position: 4px -20px; 
+	background-position: 4px -20px, 0px 0px;
+	}
+	
+ input#name { 
+ 	background-position: 4px -46px; 
+	background-position: 4px -46px, 0px 0px; 
+	}
+	
+ input#tel { 
+ 	background-position: 4px -76px; 
+	background-position: 4px -76px, 0px 0px; 
+	}
+	
+#registration h9 {
+	color: #fff;
+	text-shadow: 0px -1px 0px #000;
+	border-bottom: solid #181818 1px;
+	-moz-box-shadow: 0px 1px 0px #3a3a3a;
+	text-align: center;
+	padding: 18px;
+	margin: 0px;
+	font-weight: normal;
+	font-size: 24px;
+	font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+	}
+	
+#registerNew {
+	width: 203px;
+	height: 40px;
+	border: none;
+	text-indent: -9999px;
+	background: url('img/createAccountButton.png') no-repeat;
+	cursor: pointer;
+	float: right;
+	}
+	
+	#registerNew:hover { background-position: 0px -41px; }
+	#registerNew:active { background-position: 0px -82px; }
+	
+ #registration p {
+      position: relative;
+      }
+	  
+fieldset label.infield {
+    color: #333;
+    text-shadow: 0px 1px 0px #fff;
+    position: absolute;
+    text-align: left;
+    top: 3px !important;
+    left: 35px !important;
+    line-height: 29px;
+    }
+	
+.row-login {
+	width:55%;
+	padding:13px 0 22px;
+	border-radius:88px;
+	margin-top:110px;
+	margin-left:550px;
+	-moz-border-radius:88px;
+	-webkit-border-radius:88px;
+	background: #373737 ;/*url(../images/bg.png);*/
+}
+
+.row-signup {
+	width:50%;
+	padding:13px 0 22px;
+	margin-top:-150px;
+	
+	border-radius:88px;	
+	-moz-border-radius:88px;
+	-webkit-border-radius:88px;
+	background: #fff ;
+}
+
+
+

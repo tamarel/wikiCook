@@ -1,0 +1,41 @@
+application: wiki-cook
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  
+- url: /static
+  static_dir: web/static
+
+- url: /
+  script: web.pages.home.app
+  
+- url: /home
+  script: web.pages.home.app  
+
+- url: /recipes
+  script: web.pages.recipes.app 
+  
+- url: /addRecipes
+  script: web.pages.addRecipes.app 
+  
+- url: /about
+  script: web.pages.about.app
+
+- url: /editMyPage
+  script: web.pages.editMyPage.app
+  
+- url: /featured
+  script: web.pages.featured.app   
+  
+- url: /simulator
+  script: web.pages.simulator.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"

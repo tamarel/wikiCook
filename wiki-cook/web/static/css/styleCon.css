@@ -1,0 +1,102 @@
+
+#contact-form {
+	display:block
+	
+}
+#contact-form label {
+	display:block;
+	height:30px;
+	overflow:hidden
+}
+#contact-form input {
+	float:left;
+	width:526px;
+	font-size:13px;
+	line-height:1.23em;
+	color:#0f0f0f;
+	padding:4px 10px;
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #ebebeb;
+	background:none
+}
+
+
+#contact-form textarea {
+	height:262px;
+	overflow:auto;
+	float:left;
+	width:526px;
+	font-size:13px;
+	line-height:1.23em;
+	color:#0f0f0f;
+	padding:4px 10px;
+	margin-left: 70px;
+	margin-top:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #ebebeb;
+	background:none
+}
+.p1 {
+	margin-bottom:6px
+}
+.p2 {
+	margin-bottom:15px
+}
+
+
+.text-form {
+	float:left;
+	display:block;
+	font-size:14px;
+	width:73px;
+	line-height:1.78em;
+	color:#0f0f0f
+}
+.buttons a:hover {
+	cursor:pointer
+}
+.buttons {
+	padding-top:16px;
+	text-align:right
+}
+.buttons a {
+	margin-left:6px;
+	padding:9px 25px 11px
+}
+
+.button-2 {
+	display:inline-block;
+	font-size:19px;
+	line-height:1.21em;
+	letter-spacing:-1px;
+	color:#fefefe;
+	padding:9px 20px 11px;
+	background:url(../img/button-tail.gif) 0 0 repeat-x #3c3c3c;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px
+}
+.button-2:hover {
+	background:#3c3c3c;
+}
+.row-photo {
+	width:100%;
+	min-height:517px;
+	margin-left:300px;
+	position:relative;
+	z-index:2;
+}
+.row-cc {
+	width:100%;
+	min-height:517px;
+	margin-left:-350px;
+	position:relative;
+	z-index:2;
+}
+.row-fee {
+	width:100%;
+	margin-top:-10px;
+	padding:13px 0 20px;
+	background:#fefefe;
+}
