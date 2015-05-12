@@ -18,9 +18,7 @@ wikiCook is a platform for everyone who wants to cook ,step by step simply and e
 [wikiCook](http://wiki-cook.appspot.com/)
 
 </p>
-<p>
-<b>wikiCook is a platform for everyone who wants to cook ,step by step simply and easy . 
-<p>
+
 Technology</b><br>
 python + css + HTML + datastore <br>
 </p>
