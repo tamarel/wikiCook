@@ -15,6 +15,9 @@ handlers:
 - url: /
   script: web.pages.index.app
   
+- url: /
+  script: web.pages.connect.app
+  
 - url: /home
   script: web.pages.home.app  
 
