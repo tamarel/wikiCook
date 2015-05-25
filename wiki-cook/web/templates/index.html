@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+	{{block.super}}
+	<script src="/static/js/index.js"></script>
+{%endblock%}
+
+{% block content %}
+	
+	{%if user %}
+		<a href="/">Home</a>
+	{%else%}
+	<div id="index_content">		
+		Welcome to wikiCook.<br>
+		<img id="gconnect" src="/static/img/glogin.png" onclick="location.href='{{loginUrl}}'" alt="Connect with Google">
+	</div>
+	{%endif%}
+{%endblock%}
