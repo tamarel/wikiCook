@@ -33,6 +33,9 @@ handlers:
 - url: /editMyPage
   script: web.pages.editMyPage.app
   
+- url: /connect
+  script: web.pages.connect.app
+  
 - url: /featured
   script: web.pages.featured.app   
   
