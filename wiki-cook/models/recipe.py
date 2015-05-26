@@ -3,15 +3,15 @@ from google.appengine.ext import ndb
 from user import User
  
 class Recipe(ndb.Model):
-	user = ndb.KeyProperty(kind=User)
+	#user = ndb.KeyProperty(kind=User)
 	nameRecipe = ndb.StringProperty()
 	ingredients = ndb.TextProperty()
-	type = ndb.IntegerProperty() # חלביבשרי
+	typeRecipe = ndb.StringProperty() # חלביבשרי
 	step = ndb.TextProperty()
 	
 
 	def setType(self):
-		self.type = 0
+		self.typeRecipe = 'jkch'
 		self.ingredients = 'bla bla'
 		self.user = user.key
 		self.nameRecipe = 'omlete'
