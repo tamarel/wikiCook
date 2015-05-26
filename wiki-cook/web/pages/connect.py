@@ -14,5 +14,5 @@ class IndexHandler(webapp2.RequestHandler):
 			self.redirect('/home')
 
 app = webapp2.WSGIApplication([
-	('/home', IndexHandler)
+	('/connect', IndexHandler)
 ], debug=True)
