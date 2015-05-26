@@ -1,20 +1,28 @@
 #from google.appengine.api import users
 from google.appengine.ext.webapp import template
 
-from models.user import User
+
 import webapp2
+import json
+from models.user import User
+from models.recipe import Recipe
+
 
 class IndexHandler(webapp2.RequestHandler):
+
 	def get(self):
 		template_params = {}
-#		user = User.checkUser()
-#		if not user:
-#			template_params['loginUrl'] = User.loginUrl()
-#		else:
-#			template_params['logoutUrl'] = User.logoutUrl()
-#			template_params['user'] = user.email
-#			html = self.redirect('/salesEvents')
-
+		user = User.checkUser()
+		if not user:
+			template_params['loginUrl'] = User.loginUrl()
+		else:
+			recipe = Recipe();
+			recipe.nameRecipe = 'cdcd'
+			recipe.ingredients= self.request.get('ingredients')
+			recipe.typeRecipe= self.request.get('typeRecipe')
+			recipe.step= self.request.get('step')
+			recipe.put()
+			
 		html = template.render("web/templates/addRecipes.html", template_params)
 		self.response.write(html)
 
