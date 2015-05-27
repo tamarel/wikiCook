@@ -17,15 +17,15 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['loginUrl'] = User.loginUrl()
 		else:
 			recipe = Recipe();
-			recipe.nameRecipe = 'cdcd'
+			recipe.nameRecipe = 'nameRecipe'
 			recipe.ingredients= self.request.get('ingredients')
 			recipe.typeRecipe= self.request.get('typeRecipe')
 			recipe.step= self.request.get('step')
 			recipe.put()
 			
-		html = template.render("web/templates/addRecipes.html", template_params)
+		html = template.render("web/templates/addrecipes.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/addRecipes', IndexHandler)
+	('/addrecipes', IndexHandler)
 ], debug=True)

@@ -24,8 +24,8 @@ handlers:
 - url: /recipes
   script: web.pages.recipes.app 
   
-- url: /addRecipes
-  script: web.pages.addRecipes.app 
+- url: /addrecipes
+  script: web.pages.addrecipes.app 
   
 - url: /about
   script: web.pages.about.app

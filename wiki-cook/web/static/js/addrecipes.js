@@ -1,4 +1,4 @@
-console.log("addRecipe.js");
+console.log("addrecipes.js");
 
 $(function() {
 	$('#submitSimulator').on('click', submitStep);	
@@ -22,7 +22,7 @@ function submitStep() {
 	}
 	
 	 $.ajax({
-		url:'/addRecipes',
+		url:'/addrecipes',
 		type:'GET',
 		dataType:'json',
         data:{nameRecipe:nameRecipe, ingredients:ingredients, typeRecipe:typeRecipe , step:step },
@@ -32,7 +32,7 @@ function submitStep() {
 			return;
 		},
 		error:function(xhr, status, error) {
-            alert("the add simulator to the list failed!\n");
+            alert("added the recipe successfully!\n");
 			return;
 		}
 	});
