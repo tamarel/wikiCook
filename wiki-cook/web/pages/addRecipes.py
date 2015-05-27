@@ -17,7 +17,7 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['loginUrl'] = User.loginUrl()
 		else:
 			recipe = Recipe();
-			recipe.nameRecipe = 'nameRecipe'
+			recipe.nameRecipe = self.request.get('nameRecipe')
 			recipe.ingredients= self.request.get('ingredients')
 			recipe.typeRecipe= self.request.get('typeRecipe')
 			recipe.step= self.request.get('step')

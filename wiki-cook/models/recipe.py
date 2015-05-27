@@ -4,7 +4,7 @@ from user import User
  
 class Recipe(ndb.Model):
 	#user = ndb.KeyProperty(kind=User)
-	nameRecipe = ndb.TextProperty()
+	nameRecipe = ndb.StringProperty()
 	ingredients = ndb.TextProperty()
 	typeRecipe = ndb.StringProperty() # חלביבשרי
 	step = ndb.TextProperty()
