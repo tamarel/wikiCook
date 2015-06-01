@@ -15,6 +15,7 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			template_params['loginUrl'] = User.loginUrl()
+
 		else:
 			recipe = Recipe();
 			recipe.nameRecipe = self.request.get('nameRecipe')
@@ -23,7 +24,7 @@ class IndexHandler(webapp2.RequestHandler):
 			recipe.step= self.request.get('step')
 			recipe.put()
 			
-		html = template.render("web/templates/addrecipes.html", template_params)
+		html = template.render("web/templates/addRecipes.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([

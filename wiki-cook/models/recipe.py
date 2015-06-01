@@ -8,8 +8,8 @@ class Recipe(ndb.Model):
 	ingredients = ndb.TextProperty()
 	typeRecipe = ndb.StringProperty() # חלביבשרי
 	step = ndb.TextProperty()
+	pic_url=ndb.TextProperty()
 	
-
 	def setType(self):
 		self.typeRecipe = 'jkch'
 		self.ingredients = 'bla bla'
@@ -17,4 +17,14 @@ class Recipe(ndb.Model):
 		self.nameRecipe = 'omlete'
 		self.step = 'omlete'
 		self.put()
+		
+	@staticmethod
+	def getAllRecipe(user):
+		recipes=[] # array for name recipe
+		results= Recipe.query()  # get name recipe from table
+		if (results):
+			for recipe in results:
+				recipes.append(recipe)
+			return recipes
+		return None
 	
