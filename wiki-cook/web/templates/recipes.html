@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
 <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="/static/js/addrecipes.js"></script>
+<script type="text/javascript" src="/static/js/table.js"></script>
 <script src="/static/js/cufon-yui.js" type="text/javascript"></script>
 <script src="/static/js/cufon-replace.js" type="text/javascript"></script>
 <script src="/static/js/Open_Sans_400.font.js" type="text/javascript"></script>
@@ -64,9 +64,10 @@
 					<div>
 						<ul>
 							<li>
-								<a href="{{i.1}}">{{i.1}}</a>
+								<img src="{{i.1}}" style="width:30%; height:60%;"  id="src_recipe"/>
 								<div>
-									<h3><a href="featured"></a>{{i.0}}</h3>
+									<h3><button id="pressFeatured">{{i.0}}</button></h3>
+									<a href='/featured?myvar={{i.0}}'>{{i.0}}</a>
 								
 								</div>
 							</li>
