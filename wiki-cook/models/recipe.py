@@ -3,7 +3,7 @@ from google.appengine.ext import ndb
 from user import User
  
 class Recipe(ndb.Model):
-	#user = ndb.KeyProperty(kind=User)
+	user = ndb.KeyProperty(kind=User)
 	nameRecipe = ndb.StringProperty()
 	ingredients = ndb.TextProperty()
 	typeRecipe = ndb.StringProperty() # חלביבשרי
