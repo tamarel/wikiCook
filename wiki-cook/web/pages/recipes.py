@@ -22,8 +22,9 @@ class IndexHandler(webapp2.RequestHandler):
 					pic_url = recipe.pic_url
 					if pic_url is None:
 						pic_url="http://crossfit-marietta.com/wp-content/plugins/nertworks-all-in-one-social-share-tools/images/no_image.png"
-					recipe_and_pic = [recipe_name,pic_url]
-					recipes.append(recipe_and_pic)
+					if recipe_name:
+						recipe_and_pic = [recipe_name,pic_url]
+						recipes.append(recipe_and_pic)
 				template_params['recipes'] = recipes
 		html = template.render("web/templates/recipes.html", template_params)
 		self.response.write(html)
