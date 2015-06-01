@@ -12,7 +12,7 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['loginUrl'] = User.loginUrl()
 
 		else:
-			template_params['name_recipe'] = self.request.get('nameRecipe')
+			template_params['name_recipe'] =self.request.get('myvar')
 		
 		html = template.render("web/templates/featured.html", template_params)
 		self.response.write(html)
