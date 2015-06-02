@@ -21,7 +21,12 @@
 </head>
 <body id="body">
 <!-- header -->
-
+<div id="user_header">			
+		{% if user %}
+			Hi, {{user}} <a href="{{logoutUrl}}">Logout</a>
+		{% endif %}
+		
+		</div>
    
  <div class="body">
 		<div>

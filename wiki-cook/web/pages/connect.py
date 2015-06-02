@@ -11,7 +11,11 @@ class IndexHandler(webapp2.RequestHandler):
 		if not user:
 			self.redirect('/')
 		else:
-			self.redirect('/home')
+			template_params['logoutUrl'] = User.logoutUrl()
+			template_params['user'] = user.email
+			
+		html = template.render("web/templates/home.html", template_params)
+		self.response.write(html)
 
 app = webapp2.WSGIApplication([
 	('/connect', IndexHandler)
