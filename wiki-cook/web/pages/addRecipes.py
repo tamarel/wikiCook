@@ -19,9 +19,10 @@ class IndexHandler(webapp2.RequestHandler):
 		else:
 			recipe = Recipe();
 			recipe.nameRecipe = self.request.get('nameRecipe')
-			recipe.ingredients= self.request.get('ingredients')
-			recipe.typeRecipe= self.request.get('typeRecipe')
-			recipe.step= self.request.get('step')
+			recipe.ingredients = self.request.get('ingredients')
+			recipe.typeRecipe = self.request.get('typeRecipe')
+			recipe.step = self.request.get('step')
+			recipe.pic_url = self.request.get('pic_url')
 			recipe.put()
 			
 		html = template.render("web/templates/addRecipes.html", template_params)

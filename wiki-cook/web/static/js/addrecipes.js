@@ -14,6 +14,7 @@ function submitStep() {
 	var ingredients = $('#inputIngredients').val(); 
 	var typeRecipe =  $('#inputType').val(); 
 	var step =  $('#inputStep').val(); 
+	var pic_url =  $('#inputpic_url').val();
 	
 	if (nameRecipe.length == 0 || ingredients.length == 0 || step.length == 0 )
 	{
@@ -21,11 +22,14 @@ function submitStep() {
 		return;
 	}
 	
+	if (pic_url.length == 0)
+		pic_url = "http://crossfit-marietta.com/wp-content/plugins/nertworks-all-in-one-social-share-tools/images/no_image.png"
+	
 	 $.ajax({
 		url:'/addrecipes',
 		type:'GET',
 		dataType:'json',
-        data:{nameRecipe:nameRecipe, ingredients:ingredients, typeRecipe:typeRecipe , step:step },
+        data:{nameRecipe:nameRecipe, ingredients:ingredients, typeRecipe:typeRecipe , step:step , pic_url:pic_url},
 		success:function(data, status, xhr) {
 			alert("susses to add simulator ");
 			location.reload();

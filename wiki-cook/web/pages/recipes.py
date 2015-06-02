@@ -14,14 +14,13 @@ class IndexHandler(webapp2.RequestHandler):
 		if not user:
 			template_params['loginUrl'] = User.loginUrl()
 		else:
-			all_recipes=Recipe.getAllRecipe(user)
+			all_recipes = Recipe.getAllRecipe(user)
 			recipes=[]
 			if (all_recipes):
 				for recipe in all_recipes:
 					recipe_name = recipe.nameRecipe
 					pic_url = recipe.pic_url
-					if pic_url is None:
-						pic_url="http://crossfit-marietta.com/wp-content/plugins/nertworks-all-in-one-social-share-tools/images/no_image.png"
+
 					if recipe_name:
 						recipe_and_pic = [recipe_name,pic_url]
 						recipes.append(recipe_and_pic)

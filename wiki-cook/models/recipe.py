@@ -27,4 +27,11 @@ class Recipe(ndb.Model):
 				recipes.append(recipe)
 			return recipes
 		return None
+		
+	@staticmethod
+	def getDetailsByName(name_recipe):
+		Details = Recipe.query(Recipe.nameRecipe == name_recipe).get()
+		
+		return Details
+		
 	
