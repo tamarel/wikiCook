@@ -10,6 +10,10 @@ class Recipe(ndb.Model):
 	step = ndb.TextProperty()
 	pic_url=ndb.TextProperty()
 	
+	
+
+
+		
 	def setType(self):
 		self.typeRecipe = 'jkch'
 		self.ingredients = 'bla bla'
