@@ -19,7 +19,7 @@ handlers:
   script: web.pages.connect.app
   
 - url: /master_page
-  script: web.pages.master_page.app    
+  script: web.pages.master_page.app
   
 - url: /home
   script: web.pages.home.app  
