@@ -61,7 +61,12 @@
 							<h2>ingredients:</h2>
 							<h5>{{ingredients}}</h5>
 							<h2>recipe:</h2>
-							<h5>{{recipeStep}}</h5>
+							{% for i in recipeStep %}
+							<h5>{{i}}</h5>
+							{% endfor%}
+							
+					
+								
 							<ol class="directions" dir="rtl" >
 
 								
