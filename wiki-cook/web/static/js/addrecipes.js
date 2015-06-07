@@ -3,7 +3,7 @@ console.log("addrecipes.js");
 $(function() {
 	
 	$('#submitSimulator').on('click', submitSimulator);	
-	
+	$('#submitStep').on('click', submitSimulator);	
 	$('#inputStep').on('keyup', function(e) {	
 		if(e.keyCode === 13) {
 			submitSimulator();
