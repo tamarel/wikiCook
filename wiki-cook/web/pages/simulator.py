@@ -18,10 +18,11 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['user'] = user.email
 			template_params['name_recipe'] = self.request.get('myvar')
 			details = Recipe.getDetailsByName(self.request.get('myvar'))
-			template_params['recipeStep'] = details.step
 			template_params['pic_url'] = details.pic_url
 							
-		
+			recipeSteps=[]
+			recipeSteps= details.step.split("\n");
+			template_params['recipeStep'] = recipeSteps
 	
 		html = template.render("web/templates/simulator.html", template_params)
 		self.response.write(html)

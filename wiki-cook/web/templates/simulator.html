@@ -62,10 +62,14 @@
 							<img src="/static/img/start.png"   style="padding-left:220px;" width="200" height="100" />
  
 							<p>
-							<h1>{{recipeStep}} </h1>
-							<img src="/static/img/next.png"  
- style="padding-left:500px; " align="top" width="100"  /> 	
-							
+						{% for i in recipeStep %}
+							<h5><lable style="visibility:hiddn;" for="namestep" >{{i}}</lable></h5>
+						
+
+  <input id="next{{i}}" type="image" src="/static/img/next.png" alt="Submit"  style="padding-left:500px; visible=hidden; " align="top" width="100"  />
+						
+			
+								{% endfor %}			
 						</p>
 							
 						
