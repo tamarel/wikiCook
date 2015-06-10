@@ -22,7 +22,8 @@ class IndexHandler(webapp2.RequestHandler):
 							
 			recipeSteps=[]
 			recipeSteps= details.step.split("\n");
-			template_params['recipeStep'] = recipeSteps
+			json_step = json.dumps(recipeSteps)
+			template_params['recipeStep'] = json_step 
 	
 		html = template.render("web/templates/simulator.html", template_params)
 		self.response.write(html)
