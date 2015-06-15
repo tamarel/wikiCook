@@ -19,10 +19,10 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['name_recipe'] = self.request.get('myvar')
 			
 			details = Recipe.getDetailsByName(self.request.get('myvar'))
-		
+			
 			
 			template_params['pic_url'] = details.pic_url
-			
+			Recipe.setCount(self.request.get('myvar'))
 			ingredients=[]
 			ingredients= details.ingredients.split("\n");
 			template_params['ingredients'] = ingredients
