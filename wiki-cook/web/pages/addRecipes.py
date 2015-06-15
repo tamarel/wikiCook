@@ -15,7 +15,8 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			template_params['loginUrl'] = User.loginUrl()
-
+			self.redirect('/')
+			return
 		else:
 			recipe = Recipe();
 			recipe.nameRecipe = self.request.get('nameRecipe')
@@ -23,6 +24,8 @@ class IndexHandler(webapp2.RequestHandler):
 			recipe.typeRecipe = self.request.get('typeRecipe')
 			recipe.step = self.request.get('step')
 			recipe.pic_url = self.request.get('pic_url')
+			recipe.recipe_count=0
+			recipe.user = user.email
 			recipe.put()
 			
 		html = template.render("web/templates/addRecipes.html", template_params)
