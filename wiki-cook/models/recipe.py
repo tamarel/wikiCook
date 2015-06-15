@@ -1,26 +1,17 @@
 from google.appengine.ext import ndb
 
 from user import User
- 
+import logging
 class Recipe(ndb.Model):
-	user = ndb.KeyProperty(kind=User)
+	user = ndb.StringProperty()
 	nameRecipe = ndb.StringProperty()
 	ingredients = ndb.TextProperty()
 	typeRecipe = ndb.StringProperty() # חלביבשרי
 	step = ndb.TextProperty()
 	pic_url=ndb.TextProperty()
+	recipe_count=ndb.IntegerProperty()
 	
 	
-
-
-		
-	def setType(self):
-		self.typeRecipe = 'jkch'
-		self.ingredients = 'bla bla'
-		self.user = user.key
-		self.nameRecipe = 'omlete'
-		self.step = 'omlete'
-		self.put()
 		
 	@staticmethod
 	def getAllRecipe(user):
@@ -35,7 +26,30 @@ class Recipe(ndb.Model):
 	@staticmethod
 	def getDetailsByName(name_recipe):
 		Details = Recipe.query(Recipe.nameRecipe == name_recipe).get()
-		
 		return Details
 		
+	@staticmethod
+	def setCount(name_recipe):
+		recipe = Recipe.query(Recipe.nameRecipe == name_recipe).get()
+		recipe.recipe_count +=1
+		recipe.put()
 	
+	@staticmethod
+	def try_get_most_viewed():
+		
+		recipes=[]
+		results= Recipe.query()
+		max=-1;
+		
+		if (results):
+			for recipe in results:
+				if (recipe.recipe_count > max):
+					max =  recipe.recipe_count 
+					logging.info("ddddddd")
+					max_recipe = recipe 
+				
+			return max_recipe
+	#	most_viewed= Recipe.query.order(Recipe.recipe_count).get()
+		return None
+		
+
