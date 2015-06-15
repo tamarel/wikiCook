@@ -76,32 +76,16 @@ function addtext() {
 				<p><font size="+1" color="red">:הניצפים ביותר</a>
 				<br ><br />
 				<ul id="featured">
+					{% for i in most_views %}
 					<li>
-						<a href="recipes"><img src="/static/img/sandwich.jpg" alt="Image"></a>
+						<a href='/featured?myvar={{i.0}}'><img src="{{i.1}}" style="width:25%; height:30%;" alt="Image"></a>
 						<div>
-							<a href="recipes" >כריך נקניק</a>
+							<a href='/featured?myvar={{i.0}}'>{{i.0}}</a>
+							
 							<span>מפרסם:צרביט</span>
 						</div>
 					</li>
-					<li>
-						<a href="recipes"><img src="/static/img/biscuit-and-coffee.jpg" alt="Image"></a>
-						<div>
-							<a href="recipes">נס קפה</a>
-							<span>מפרסם:בבני</span>
-						</div>
-					</li>
-					<li>
-						<a href="recipes"><img src="/static/img/pizza.jpg" alt="Image"></a>
-						<div>
-							<a href="recipes">פיצה פינוקים</a>
-							<span>מפרסם:תמר</span>
-							<br ><br />
-								<br ><br/>
-							<a ><img src="/static/img/logo_osem-soffi_b.jpg" alt="" align="center" width="70%" height="70%"  ></a>
-							
-							<br ><br/>
-						</div>
-					</li>
+					{% endfor%}
 				</ul>
 			</div>
 			
