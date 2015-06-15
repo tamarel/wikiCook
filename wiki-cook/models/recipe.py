@@ -27,7 +27,19 @@ class Recipe(ndb.Model):
 	def getDetailsByName(name_recipe):
 		Details = Recipe.query(Recipe.nameRecipe == name_recipe).get()
 		return Details
+
+	@staticmethod
+	def getRecipeByUser	(user):
+		recipes=[] # array for name recipe
+		results= Recipe.query()  # get name recipe from table
+		if (results):
+			for recipe in results:
+				if ( recipe.user ==  user.email):
+					recipes.append(recipe)
+			return recipes
+		return None
 		
+
 	@staticmethod
 	def setCount(name_recipe):
 		recipe = Recipe.query(Recipe.nameRecipe == name_recipe).get()

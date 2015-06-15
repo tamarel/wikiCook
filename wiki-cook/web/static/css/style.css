@@ -53,12 +53,13 @@ h1, h2, h3, h5 {
 div.header {
 	height: 145px;
 	margin: 0 auto;
-	overflow: hidden;
-	width: 960px;
+	width: 200px;
+	font-size: 4px;
+	
 }
 div.header div {
 	float: left;
-	margin: 39px 0 0;
+	margin: 20px 0 0;
 }
 div.header div a, 
 div.body div div:first-child a, 
@@ -120,13 +121,12 @@ div.body div:first-child div.header ul {
 div.body div:first-child div.header ul li {
 	float: left;
 	margin: 0 13px;
-	text-transform: uppercase;
 }
 div.body div:first-child div.header ul li a {
 	color: #fffcdf;
 	display: block;
 	height: 29px;
-	font-size: 20px;
+	font-size: 16px;
 	letter-spacing: 0.075em;
 	line-height: 29px;
 	padding: 0 10px;

@@ -1,11 +1,71 @@
+{% extends "master_page.html" %}
 
+<!DOCTYPE html>
 <html lang="he">
 
 <head>
 
-
+{% block head %}
+	{{block.super}}
+{%endblock%}
 </head>
 
+
+<body id="body">
+<!-- header -->
+{% block menuup %}
+		{{ block.super }}
+		
+		{% endblock %}
+	
+	{% block mainsite %}	
+	{{ block.super }}
+	<div class="body">
+		<div>
+			<div class="header" dir="rtl" >
+				<ul>
+					<li >
+						<a href="home" >home</a>
+					</li>
+					<li >
+						<a href="recipes">recipes</a>
+					</li>
+					<li>
+						<a href="addrecipes">add recipe</a>
+					</li>
+					<li class="current">
+						<a href="recipeofuser"  >My recipes</a>
+					</li>
+					
+					<li>
+						<a href="about">about us</a>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="body">
+				{% for i in recipes %}
+				<div id="content">
+					<div>
+						<ul>
+							<li>
+								<img src="{{i.1}}" style="width:30%; height:60%;"  id="src_recipe"/>
+								<div>
+									
+									<a href='/featured?myvar={{i.0}}'>{{i.0}}</a>
+								
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				{% endfor%}
+			</div>
+		</div>
+					{% endblock %}
+		{% block site %}
+		{{ block.super }}
+			{% endblock %}
 			
 </html>
 
