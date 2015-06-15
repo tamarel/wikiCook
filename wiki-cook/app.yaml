@@ -45,6 +45,9 @@ handlers:
 - url: /simulator
   script: web.pages.simulator.app
 
+- url: /recipeofuser
+  script: web.pages.recipeofuser.app
+
 libraries:
 - name: webapp2
   version: "2.5.2"
