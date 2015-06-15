@@ -29,7 +29,7 @@ function submitSimulator() {
 	}
 	
 	if (pic_url.length == 0)
-		pic_url = "http://crossfit-marietta.com/wp-content/plugins/nertworks-all-in-one-social-share-tools/images/no_image.png"
+		pic_url = "http://www.designofsignage.com/application/symbol/building/image/600x600/no-photo.jpg"
 	
 	 $.ajax({
 		url:'/addrecipes',
