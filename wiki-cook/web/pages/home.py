@@ -3,7 +3,7 @@ import config
 import logging
 
 from google.appengine.ext.webapp import template
-
+from models.recipe import Recipe
 from models.user import User
 import webapp2
 
@@ -19,7 +19,9 @@ class IndexHandler(webapp2.RequestHandler):
 		template_params['user'] = user.email
 		template_params['logoutUrl'] = user.logoutUrl()
 
-		
+		most_recipes = Recipe.try_get_most_viewed()
+		if (most_recipes):
+			template_params['most_views'] = most_recipes
 		html = template.render("web/templates/home.html", template_params)
 		self.response.write(html)
 

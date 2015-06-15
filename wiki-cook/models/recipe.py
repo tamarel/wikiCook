@@ -51,16 +51,40 @@ class Recipe(ndb.Model):
 		
 		recipes=[]
 		results= Recipe.query()
-		max=-1;
-		
+		max_h=-1
+		max_t=-1
+		recipe_name_one=' '
+		recipe_name_two=' '
+		recipe_and_pic_one =[]
+		recipe_and_pic_two =[]
+		pic_one=' '
+		pic_two=' '
 		if (results):
 			for recipe in results:
-				if (recipe.recipe_count > max):
-					max =  recipe.recipe_count 
-					logging.info("ddddddd")
-					max_recipe = recipe 
+				if (recipe.recipe_count > max_h):
+					max_t = max_h
+					max_h =  recipe.recipe_count 
+					
+					recipe_name_two = recipe_name_one 
+					recipe_name_one = recipe.nameRecipe 
+					
+					pic_two=pic_one
+					pic_one=recipe.pic_url
+
+					recipe_and_pic_one =[ recipe_name_one , pic_one ]
+					recipe_and_pic_two = [ recipe_name_two , pic_two ]
+					
+				elif (recipe.recipe_count > max_t):
+					max_t = recipe.recipe_count
+					
+					
+					recipe_name_two = recipe.nameRecipe 
 				
-			return max_recipe
+					
+					pic_two=recipe.pic_url
+					recipe_and_pic_two = [ recipe_name_two , pic_two ]				
+			recipes =[ recipe_and_pic_one, recipe_and_pic_two]	
+			return recipes
 	#	most_viewed= Recipe.query.order(Recipe.recipe_count).get()
 		return None
 		

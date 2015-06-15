@@ -182,6 +182,59 @@ div.body div:first-child div.body ul li a {
 	float: left;
 	margin: 0;
 }
+.freecontactform {
+width: 600px;
+font-family: arial;
+padding:10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+.freecontactformheader {
+font-size:27px;
+font-weight:bold;
+padding-top:10px;
+padding-bottom:10px;
+text-align:center;
+}
+.freecontactformmessage {
+text-align:center;
+padding-bottom:10px;
+}
+.freecontactform td {
+padding:4px;
+font-size:12px;
+}
+.freecontactform p {
+padding:4px;
+}
+.freecontactform label {
+padding:4px;
+}
+.freecontactform label {
+padding-right:10px
+}
+.required {
+font-weight:bold;
+}
+.required_star {
+font-weight:bold;
+color:#F00;
+}
+.not-required {
+font-weight:normal
+}
+.antispammessage {
+padding:10px;
+border-top:1px solid #AAA;
+border-bottom:1px solid #AAA;
+font-weight:bold 
+}
+.antispamquestion {
+font-weight:normal;
+}
+
+
 div.body div:first-child div.body ul li div {
 	background: none;
 	border-radius: 0;
@@ -307,8 +360,8 @@ div.body div div h4:first-child {
 	padding: 7px 0 0;
 }
 div.body div div span {
-	color: #6c5b37;
-	display: block;
+	
+	
 	font-family: "Times New Roman", Times, serif;
 	font-size: 18px;
 	font-weight: bold;

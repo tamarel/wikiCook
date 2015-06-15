@@ -28,6 +28,11 @@ class IndexHandler(webapp2.RequestHandler):
 			recipe.user = user.email
 			recipe.put()
 			
+			most_recipes = Recipe.try_get_most_viewed()
+			recipess=[]
+			if (most_recipes):
+				
+				template_params['most_views'] = most_recipes
 		html = template.render("web/templates/addRecipes.html", template_params)
 		self.response.write(html)
 

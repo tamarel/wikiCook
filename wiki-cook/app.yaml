@@ -48,6 +48,11 @@ handlers:
 - url: /recipeofuser
   script: web.pages.recipeofuser.app
 
+- url: /sendcontactus
+  script: web.pages.about.app
+ 
+
+  
 libraries:
 - name: webapp2
   version: "2.5.2"

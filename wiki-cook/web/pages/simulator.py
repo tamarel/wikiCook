@@ -24,7 +24,11 @@ class IndexHandler(webapp2.RequestHandler):
 			recipeSteps= details.step.split("\n");
 			json_step = json.dumps(recipeSteps)
 			template_params['recipeStep'] = json_step 
-	
+			most_recipes = Recipe.try_get_most_viewed()
+			if (most_recipes):
+				
+				template_params['most_views'] = most_recipes
+				
 		html = template.render("web/templates/simulator.html", template_params)
 		self.response.write(html)
 

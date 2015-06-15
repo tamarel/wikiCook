@@ -23,14 +23,10 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script language="javascript" type="text/javascript">
-function addtext() {
-	var newtext = document.myform.inputtext.value;
-	document.myform.inputtext.value="";
-	document.myform.outputtext.value +="\n";
-	document.myform.outputtext.value += newtext;
-}
-</script>
+<script language="javascript" type="text/javascript"></script>
+<script src="../static/js/about.js"></script>
+
+
 {% endblock %}
 </head>
 
@@ -73,7 +69,7 @@ function addtext() {
 		<div>
 			<div>
 			
-				<p><font size="+1" color="red">:הניצפים ביותר</a>
+				<p><font size="+1" color="red">most viewed</a>
 				<br ><br />
 				<ul id="featured">
 					{% for i in most_views %}
@@ -82,20 +78,15 @@ function addtext() {
 						<div>
 							<a href='/featured?myvar={{i.0}}'>{{i.0}}</a>
 							
-							<span>מפרסם:צרביט</span>
 						</div>
 					</li>
-					{% endfor%}
+					{%endfor%}
 				</ul>
 			</div>
 			
 			<div>
 				<h5>שתפו</h5>
 				<a href="http://www.facebook.com" target="_blank" id="facebook">Facebook</a>
-				<a href="http://www.twitter.com" target="_blank" id="twitter">Twitter</a>
-				<a href="http://www.youtube.com" target="_blank" id="youtube">Youtube</a>
-				<a href="http://www.flickr.com" target="_blank" id="flickr">Flickr</a>
-				<a href="http://www.googleplus.com" target="_blank" id="googleplus">Google&#43;</a>
 			</div>
 			<br ><br/>
 		
