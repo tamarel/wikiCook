@@ -84,7 +84,7 @@ function loadSteps() {
 function showNextStep() {
         console.log("next step");
     if(current_step < steps.length) {
-        $('#steps').append('<div>'+'Step number '+(current_step+1)+': ' +steps[current_step]['text']+'</div>');
+        $('#steps').append('<div><font size="5">'+'Step number '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
 		
         current_step++;
     }

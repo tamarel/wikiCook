@@ -20,7 +20,11 @@ class IndexHandler(webapp2.RequestHandler):
 			
 			details = Recipe.getDetailsByName(self.request.get('myvar'))
 			
+			most_recipes = Recipe.try_get_most_viewed()
 			
+			if (most_recipes):
+				
+				template_params['most_views'] = most_recipes
 			template_params['pic_url'] = details.pic_url
 			Recipe.setCount(self.request.get('myvar'))
 			ingredients=[]
