@@ -1,15 +1,16 @@
-{% extends "base.html" %}
-{% block head %}
-	{{block.super}}
+<html lang="he">
+<head>
+<title>wikiCook</title>
+<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+
 	<script src="/static/js/index.js"></script>
-{%endblock%}
+</head>
 
-{% block content %}
+<body>
 	
-	{%if user %}
-		<meta http-equiv="refresh" content="0; url='/home'" />
 
-	{%else%}
+
+	
 	<div id="index_content">		
 		Welcome to wikiCook.<br>
 		<p>
@@ -18,5 +19,5 @@
 		<p>
 		<img id="gconnect" src="/static/img/glogin.png" onclick="location.href='{{loginUrl}}'" alt="Connect with Google">
 	</div>
-	{%endif%}
-{%endblock%}
+</body>
+</html>

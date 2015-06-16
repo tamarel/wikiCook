@@ -13,11 +13,12 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		
 		if not user:
-			self.redirect('/')
-			return
+			template_params['user'] = 'guest'
+			
 		
-		template_params['user'] = user.email
-		template_params['logoutUrl'] = user.logoutUrl()
+		else:
+			template_params['user'] = user.email
+			template_params['logoutUrl'] = user.logoutUrl()
 
 		most_recipes = Recipe.try_get_most_viewed()
 		if (most_recipes):

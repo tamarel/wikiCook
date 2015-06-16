@@ -15,9 +15,11 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			template_params['loginUrl'] = User.loginUrl()
-			self.redirect('/')
+			self.redirect('/index')
 			return
 		else:
+			template_params['user'] = user.email
+			template_params['logoutUrl'] = user.logoutUrl()
 			recipe = Recipe();
 			recipe.nameRecipe = self.request.get('nameRecipe')
 			recipe.ingredients = self.request.get('ingredients')
@@ -29,7 +31,7 @@ class IndexHandler(webapp2.RequestHandler):
 			recipe.put()
 			
 			most_recipes = Recipe.try_get_most_viewed()
-			recipess=[]
+		
 			if (most_recipes):
 				
 				template_params['most_views'] = most_recipes

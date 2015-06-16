@@ -11,17 +11,18 @@ class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
 		user = User.checkUser()
+		
 		if not user:
+			template_params['user'] = 'guest'
 			template_params['loginUrl'] = User.loginUrl()
-		else:
+		else:	
 			template_params['logoutUrl'] = User.logoutUrl()
 			template_params['user'] = user.email
-#			html = self.redirect('/salesEvents')
-			most_recipes = Recipe.try_get_most_viewed()
 			
-			if (most_recipes):
-				
-				template_params['most_views'] = most_recipes
+		most_recipes = Recipe.try_get_most_viewed()
+		
+		if (most_recipes):
+			template_params['most_views'] = most_recipes
 		html = template.render("web/templates/about.html", template_params)
 		self.response.write(html)
 

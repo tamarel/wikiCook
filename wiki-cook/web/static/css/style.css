@@ -245,7 +245,7 @@ div.body div:first-child div.body ul li div {
 	width: 150px;
 }
 div.body div:first-child div.body ul li div h2 {
-	display: block;
+	
 	font-family: "Times New Roman", Times, serif;
 	font-size: 16px;
 	letter-spacing: 0.05em;
@@ -497,7 +497,7 @@ div.body div div a#youtube {
 	margin: 8px 0 0;
 }
 div.body div div a#youtube:hover {
-	background: url(/static/img/icons.png) no-repeat 1px -101px;
+	background: url(/static/img/icons.png) no-repeat 1px -10	;
 }
 div.body div div a#flickr {
 	background: url(/static/img/icons.png) no-repeat 0 -137px;

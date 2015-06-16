@@ -12,7 +12,12 @@ class IndexHandler(webapp2.RequestHandler):
 		template_params = {}
 		user = User.checkUser()
 		if not user:
+						
+			template_params['user'] = 'guest'
 			template_params['loginUrl'] = User.loginUrl()
+			self.redirect('/index')
+			return
+			
 		else:
 			template_params['logoutUrl'] = User.logoutUrl()
 			template_params['user'] = user.email

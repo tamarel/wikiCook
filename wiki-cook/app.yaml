@@ -13,11 +13,13 @@ handlers:
   static_dir: web/static
 
 - url: /
+  script: web.pages.home.app
+  
+
+  
+- url: /index
   script: web.pages.index.app
-  
-- url: /
-  script: web.pages.connect.app
-  
+   
 - url: /master_page
   script: web.pages.master_page.app
   

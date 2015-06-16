@@ -18,5 +18,5 @@ class IndexHandler(webapp2.RequestHandler):
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/', IndexHandler)
+	('/index', IndexHandler)
 ], debug=True)
