@@ -13,8 +13,8 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		
 		if not user:
-			template_params['user'] = 'guest'
 			
+			template_params['loginUrl'] = User.loginUrl()
 		
 		else:
 			template_params['user'] = user.email

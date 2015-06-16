@@ -114,7 +114,7 @@ add picture with link
 
 <form name="myform">
 
-<textarea name="inputtext" cols="25" rows="5" dir="ltr"></textarea>
+<textarea name="inputtext" id="addstepToList" cols="25" rows="5" dir="ltr"></textarea>
 <p>
 <input type="button" value="Add New step" onClick="addtext();">
 <p>
@@ -122,8 +122,11 @@ add picture with link
 <textarea id="outputtext" name="outputtext" cols="25" rows="5" dir="ltr"></textarea>
 
 </form>
-
-
+<div dir="ltr">
+<h3 > If this step need timer, <p>
+ please insert how much time needs (in minutes)</h3>  
+<input id="inputTime" placeholder="0" size="10">
+</div>
 
 
 <br>

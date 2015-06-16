@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="he">
@@ -37,8 +38,10 @@
 <div id="user_header">			
 		{% if user %}
 			Hi, {{user}} <a href="{{logoutUrl}}">Logout</a>
-		{% endif %}
 		
+		{% else %}
+			Hi, guest <a href="{{loginUrl}}">Login</a>
+		{% endif %}
 		</div>
 		
 		
