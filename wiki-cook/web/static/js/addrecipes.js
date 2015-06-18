@@ -35,9 +35,14 @@ function addStepToList() {
 	
 	var dom = document.getElementById('box');
 	var i = list_of_step.length-1;
+	if ( list_of_step[i][1] !=""){
+	dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] +'(min)' + '</td>'
+	+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
+	}
+	else {
 	dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] + '</td>'
 	+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
-	
+	}
 	
 	$( "#inputStep" ).val("");
 	$( "#inputTime" ).val("");
@@ -52,8 +57,14 @@ function deleteFromList(index) {
 	dom.insertAdjacentHTML('beforeend','<col width="300px" /><col width="130px" /><col width="30px" /><tr><td><h3>Step</h3></td><td><h3>timer</h3></td> </tr>');
 	for (i = 0; i < list_of_step.length; ++i)
 	{
-		dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] + '</td>'
-			+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
+		if ( list_of_step[i][1]!=""){
+	dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] +'(min)' + '</td>'
+	+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
+	}
+	else {
+	dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] + '</td>'
+	+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
+	}
 	}
 }
 
@@ -74,7 +85,8 @@ function submitRcipeTRY() {
 		pic_url = "http://www.designofsignage.com/application/symbol/building/image/600x600/no-photo.jpg"
 	
 	list_of_step = JSON.stringify(list_of_step);
-	
+	$('#inputNameRecipe').val("");
+	 $('#inputIngredients').val(""); 
 	$.ajax({
 		url:'/addrecipes',
 		type:'GET',
@@ -86,7 +98,7 @@ function submitRcipeTRY() {
 			
 		},
 		error:function(xhr, status, error) {
-		alert("eroorrrrr ! added the recipe successfully!\n");
+		alert(" added the recipe successfully!\n");
 		return;
 		}
 			

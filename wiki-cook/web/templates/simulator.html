@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  
+  <script src="countdown.js"></script>
   
 	{{block.super}}
 {%endblock%}
@@ -53,8 +53,10 @@
 				
 					<div>
 						<div>
-							<center>	<h1>{{name_recipe}} </h1> </center>
-   
+							<center>	<h1 style=" color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">{{name_recipe}} </h1> </center>
+   <p>
+
 
 							<p>
 
@@ -66,8 +68,9 @@
 
 var current_step = 0;
 var steps = [];
-
-
+var sec =1;
+var min = 0;
+var hour = 0;
 function loadSteps() {
     //this is a mock function for loading steps
     //it simulates loading from the server
@@ -82,18 +85,29 @@ function loadSteps() {
 };
 
 function showNextStep() {
-        console.log("next step");
+      
     if(current_step < steps.length) {
 		if ( steps[current_step]['timer'] != ''){
-			$('#steps').append('<div><font size="5">'+'Step number '+(current_step+1)+': ' +steps[current_step]['text']+  '  --- timer:'+ steps[current_step]['timer'] +'</font></div>');
+			$('#steps').append('<div><font color: size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
+			$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.png);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font></div><p><b>');				
+			
+			min =steps[current_step]['timer']%60 ;
+			hour = parseInt(steps[current_step]['timer']/60);
+			current_step++;
+			resetIt();
+			
+		
 		}
 		else {
-			$('#steps').append('<div><font size="5">'+'Step number '+(current_step+1)+': ' +steps[current_step]['text'] +'</font></div>');
+			
+			$('#steps').append('<div><font size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text'] +'</font></div>');
+			current_step++;
 		}
-        current_step++;
+        
     }
     else {
         alert('You finish!!!');
+		return;
     }
 }
         
@@ -104,9 +118,79 @@ $(function() {
 
 
 		
-		</script>
-						
 
+<!-- Copyright 2001, Sandeep Gangadharan -->
+<!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
+
+<!--
+
+function stopwatch(text) {
+   sec--;
+  if (sec == 0) {
+   sec = 59;
+   min = min - 1; }
+  else {
+   min = min; }
+   
+  if (min == 0 && sec ==0 && hour==0 ) {
+	alert("time is over");
+	min=0;
+	sec=0;
+	hour=0;
+	}
+   
+   if (min == 0 && sec ==1 && hour!=0 ) {
+	
+   min = 59; 
+   hour -= 1; }
+
+if (sec<=9) { sec = "0" + sec; }
+   document.clock.stwa.value = ((hour<=9) ? "0"+hour : hour) + " : " + ((min<=9) ? "0" + min : min) + " : " + sec;
+
+  if (text == "start") { document.clock.theButton.value = "stop "; }
+  if (text == "stop ") { document.clock.theButton.value = "start"; }
+
+  if (document.clock.theButton.value == "start") {
+   window.clearTimeout(SD);
+   return true; }
+SD=window.setTimeout("stopwatch();", 1000);
+
+
+}
+
+ 
+function resetIt() {
+
+  sec = 1;
+ 
+  if (document.clock.theButton.value == "stop ") {
+  document.clock.theButton.value = "start"; }
+  window.clearTimeout(SD);
+ }
+ 
+</script>
+
+
+
+<table bgcolor="#c0c0c0" align="right" border="0" width="140" cellspacing="0">
+  <tr>
+     <td align="center">
+       <font face="verdana, arial, helvetica, sans-serif" size="2">
+       <b>timer</b></font>
+     </td>
+  </tr>
+  <tr>
+     <td align="center">
+       <form name="clock">
+       <input type="text" size="12" name="stwa" value="00 : 00 : 00" style="text-align:left" /><br />
+       <input type="button" name="theButton" onClick="stopwatch(this.value);" value="start" />
+    
+       </form>
+     </td>
+  </tr>     
+</table>
+<audio id="xyz" src="whatever_you_want.mp3" preload="auto"></audio>
+						
 <div id="steps">
     
 </div>
