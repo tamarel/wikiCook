@@ -1,16 +1,18 @@
 /* Website template by freewebsitetemplates.com */
 body {
-	background: url(/static/img/bg.jpg) repeat;
+	background: url(/static/img/5555.jpg) repeat;
 	color: #6c5b37;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	margin: 0;
 	min-width: 960px;
 	padding: 0;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	
 }
 #user_header {
-	background:#f2e8b7;
+	background:#2EB8E6;
 }
 
 
@@ -89,7 +91,7 @@ div.search form input#search {
 	width: 180px;
 }
 div.search input#searchbtn {
-	background: url(/static/img/interface.png) no-repeat 0 -306px;
+	background:#2EB8E6;
 	border: 0;
 	top: 10px;
 	float: right;
@@ -101,6 +103,7 @@ div.body {
 	margin: 20px auto 0;
 	overflow: hidden;
 	width: 960px;
+
 }
 div.body div:first-child {
 	float: left;
@@ -109,7 +112,8 @@ div.body div:first-child {
 	width: 716px;
 }
 div.body div:first-child div.header {
-	background: url(/static/img/interface.png) no-repeat;
+	background: #2EB8E6;
+	
 	height: 35px;
 	padding: 7px 0 0 8px;
 	margin: 0 0 0 3px;

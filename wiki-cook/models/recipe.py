@@ -88,4 +88,10 @@ class Recipe(ndb.Model):
 	#	most_viewed= Recipe.query.order(Recipe.recipe_count).get()
 		return None
 		
-
+	@staticmethod
+	def deleterecipes(recipename):
+		
+		recipe=Recipe.getDetailsByName(recipename)
+		if recipe is not None:
+			recipe.key.delete();
+		return

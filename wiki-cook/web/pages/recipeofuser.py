@@ -35,11 +35,28 @@ class IndexHandler(webapp2.RequestHandler):
 			if (most_recipes):
 				
 				template_params['most_views'] = most_recipes
-				
+						
+		html = template.render("web/templates/recipeofuser.html", template_params)
+		self.response.write(html)
+		return
+		
+		
+class deleteRecipes(webapp2.RequestHandler):
+	def get(self):
+		template_params = {}
+		user = User.checkUser()
+		if not user:
+			template_params['loginUrl'] = User.loginUrl()
+
+		else:
+			Recipe.deleterecipes(self.request.get('nameRecipe')) 
 		html = template.render("web/templates/recipeofuser.html", template_params)
 		self.response.write(html)
 		return
 
+
 app = webapp2.WSGIApplication([
-	('/recipeofuser', IndexHandler)
+	('/recipeofuser', IndexHandler),
+	('/deleterecipes', deleteRecipes)
+	
 ], debug=True)

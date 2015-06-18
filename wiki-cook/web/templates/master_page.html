@@ -27,6 +27,8 @@
 <script language="javascript" type="text/javascript"></script>
 <script src="../static/js/about.js"></script>
 
+<script type="text/javascript" src="/static/js/deleterecipes.js"></script>
+
 
 {% endblock %}
 </head>
@@ -35,21 +37,29 @@
 <!-- header -->
 {% block menuup %}
    
-<div id="user_header">			
+<div style="">		
+	<b>	
 		{% if user %}
 			Hi, {{user}} <a href="{{logoutUrl}}">Logout</a>
 		
 		{% else %}
 			Hi, guest <a href="{{loginUrl}}">Login</a>
 		{% endif %}
-		</div>
+	</b>
+</div>
 		
 		
 		<br/>
 		{% block content %}
 		{% endblock %}
    
+ <div class="body">
+		<div>
+ <a href="home"><img src="/static/img/logo.png"  
+ style="padding-left:250px;" width="600" height="300" /></a></div>
+ 
 
+	</div>
 			{% endblock %}
 			
 				{% block mainsite %}	

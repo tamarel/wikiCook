@@ -49,12 +49,17 @@
 					<div>
 						<ul>
 							<li>
-								<img src="{{i.1}}" style="width:30%; height:60%;"  id="src_recipe"/>
-								<div>
-									
-									<a href='/featured?myvar={{i.0}}'>{{i.0}}</a>
+							
+								<a href='/featured?myvar={{i.0}}'>{{i.0}} </a>
+								<br>	
+									<img src="{{i.1}}" style="width:28%; height:54%;"  id="src_recipe"/>
+								</br>
 								
-								</div>
+								<br>
+									<button id="deleteRecipe" style="color:black"  onClick="deleteRecipe('{{i.0}}' , confirm('Are you sure you want to delete ' + '{{i.0}} ' + '?') )">Delete</button>
+									<button id="Edit" style="color:black" value="Reset">Edit</button>
+							
+								</br>
 							</li>
 						</ul>
 					</div>
