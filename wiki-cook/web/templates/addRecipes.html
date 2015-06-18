@@ -7,14 +7,7 @@
 
 {% block head %}
 	{{block.super}}
-<script>
-function addtext() {
-	var newtext = document.myform.inputtext.value;
-	document.myform.inputtext.value="";
-	document.myform.outputtext.value += newtext;
-	document.myform.outputtext.value +="\n";
-}
-</script>
+
 {%endblock%}
 </head>
 
@@ -112,29 +105,38 @@ add picture with link
 <br>
 <br>
 
-<form name="myform">
 
-<textarea name="inputtext" id="addstepToList" cols="25" rows="5" dir="ltr"></textarea>
-<p>
-<input type="button" value="Add New step" onClick="addtext();">
-<p>
+<div dir="ltr" style="position:absolute; top:115%; left:20%;">
+<h3 >If this step need timer, <p>
+ please insert how much time needs<p> (in minutes)  <span><input id="inputTime" placeholder="0" size="3"   ></span></h3>  
 
-<textarea id="outputtext" name="outputtext" cols="25" rows="5" dir="ltr"></textarea>
-
-</form>
-<div dir="ltr">
-<h3 > If this step need timer, <p>
- please insert how much time needs (in minutes)</h3>  
-<input id="inputTime" placeholder="0" size="10">
 </div>
 
+<textarea id="inputStep" cols="25" rows="5" dir="ltr"></textarea>
+<p>
+<p>
+
+
+
+<input type="button" id="submitStep" value="Add New step"  >
+
 
 <br>
 
 <br>
 </form>
 
-
+<h1 dir="ltr" u><i> recipe step </u></i></h1>
+						<table id ="box" dir="ltr" style="table-layout:fixed;color:blue;font-size:110%" border="0px">
+							<col width="300px" />
+							<col width="130px" />
+							<col width="30px" />
+							<tr>
+								<td><h3>Step</h3></td>
+								<td><h3>timer</h3></td>
+							</tr>
+						</table>
+						
 <div  dir="center">
 <button id="submitSimulator">Submit</button>
 

@@ -66,7 +66,7 @@
 
 var current_step = 0;
 var steps = [];
-var stepsss = [] ;
+
 
 function loadSteps() {
     //this is a mock function for loading steps
@@ -74,8 +74,8 @@ function loadSteps() {
     
 	var step = {{recipeStep|safe }};
 	
-	for ( var i =0 ;  i < step.length-1 ; i++) {
-		steps[i]= {"text":step[i]}  ;
+	for ( var i =0 ;  i < step.length ; i++) {
+		steps[i]= {"text":step[i][0] , "timer":step[i][1]}  ;
 	}
 	
 
@@ -84,8 +84,12 @@ function loadSteps() {
 function showNextStep() {
         console.log("next step");
     if(current_step < steps.length) {
-        $('#steps').append('<div><font size="5">'+'Step number '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
-		
+		if ( steps[current_step]['timer'] != ''){
+			$('#steps').append('<div><font size="5">'+'Step number '+(current_step+1)+': ' +steps[current_step]['text']+  '  --- timer:'+ steps[current_step]['timer'] +'</font></div>');
+		}
+		else {
+			$('#steps').append('<div><font size="5">'+'Step number '+(current_step+1)+': ' +steps[current_step]['text'] +'</font></div>');
+		}
         current_step++;
     }
     else {

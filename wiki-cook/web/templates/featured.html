@@ -55,9 +55,43 @@
 							{% endfor%}
 							
 							<h2>recipe:</h2>
-							{% for i in recipeStep %}
-							<h5>{{i}}</h5>
-							{% endfor%}
+							<h5 id="steps" >
+    
+</h5>
+<script>	
+
+var current_step = 0;
+var steps = [];
+
+
+function loadSteps() {
+//this is a mock function for loading steps
+//it simulates loading from the server
+
+	var step = {{recipeStep|safe }};
+
+	for ( var i =0 ;  i < step.length ; i++) {
+		steps[i]= {"text":step[i][0] , "timer":step[i][1]}  ;
+	}
+
+	for ( var i =0 ;  i < step.length ; i++) {
+		
+			$('#steps').append('<font size="2">'+(i+1)+'. ' +steps[i]['text']+ '</font><p>');
+		
+		
+	}
+
+	
+};
+
+$(function() {
+	loadSteps();
+})
+
+
+
+</script>
+						
 							
 					
 								

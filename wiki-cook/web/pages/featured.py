@@ -35,14 +35,16 @@ class IndexHandler(webapp2.RequestHandler):
 			
 		template_params['pic_url'] = details.pic_url
 		Recipe.setCount(self.request.get('myvar'))
+		
 		ingredients=[]
 		ingredients= details.ingredients.split("\n");
 		template_params['ingredients'] = ingredients
 		
-		recipeSteps=[]
-		recipeSteps= details.step.split("\n");
-		template_params['recipeStep'] = recipeSteps
-			
+		
+	
+		
+		template_params['recipeStep'] = details.step 	
+		
 		html = template.render("web/templates/featured.html", template_params)
 		self.response.write(html)
 

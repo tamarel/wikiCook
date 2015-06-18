@@ -24,7 +24,7 @@ class IndexHandler(webapp2.RequestHandler):
 			recipe.nameRecipe = self.request.get('nameRecipe')
 			recipe.ingredients = self.request.get('ingredients')
 			recipe.typeRecipe = self.request.get('typeRecipe')
-			recipe.step = self.request.get('step')
+			recipe.step = self.request.get('list_of_step')
 			recipe.pic_url = self.request.get('pic_url')
 			recipe.recipe_count=0
 			recipe.user = user.email

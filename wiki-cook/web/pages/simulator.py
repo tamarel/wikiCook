@@ -25,10 +25,9 @@ class IndexHandler(webapp2.RequestHandler):
 			details = Recipe.getDetailsByName(self.request.get('myvar'))
 			template_params['pic_url'] = details.pic_url
 							
-			recipeSteps=[]
-			recipeSteps= details.step.split("\n");
-			json_step = json.dumps(recipeSteps)
-			template_params['recipeStep'] = json_step 
+		
+			template_params['recipeStep'] = details.step 
+			
 			most_recipes = Recipe.try_get_most_viewed()
 			if (most_recipes):
 				
