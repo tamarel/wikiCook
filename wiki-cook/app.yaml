@@ -1,4 +1,4 @@
-application: wi-ki1
+application: babani-project
 version: 1
 runtime: python27
 api_version: 1
@@ -48,6 +48,9 @@ handlers:
   script: web.pages.simulator.app
 
 - url: /recipeofuser
+  script: web.pages.recipeofuser.app
+  
+- url: /deleterecipes
   script: web.pages.recipeofuser.app
 
 - url: /sendcontactus
