@@ -45,11 +45,11 @@
 			<div class="body">
 				<div id="content">
 					<div>
-						<div  dir="rtl">
+						<div  dir="ltr">
 					
 						<br>
 					
-						שם המתכון
+						Recipe name
 <textarea name="comments" id="inputNameRecipe" cols="25" rows="1"></textarea>
 
 
@@ -57,8 +57,8 @@
 <br>
 
 <select id="inputType">
-  <option value="בשרי">בשרי</option>
-  <option value="חלבי">חלבי</option>
+  <option value="Meat meal">Meat meal</option>
+  <option value="Dairy">Dairy</option>
   <br>
 </select>
 
@@ -66,13 +66,13 @@
 <br>
 <br>
 <form method="post" action="">
-<textarea name="comments"  id="inputIngredients" cols="45" rows="10">
-הוסף רשימת מצרכים,כל מצרך בשורה נפרדת
+<textarea name="comments" dir="ltr"  id="inputIngredients" cols="45" rows="10">
+Enter list of ingredients , each ingredient in a seperate row
 
-לדוגמה:
+Example:
 
-כפית סוכר
-כוס שמן
+Spoon of sugar
+Cup of oil
 ....
 </textarea><br>
 
@@ -81,7 +81,7 @@
 <br>
 add picture with link
 
-	<textarea name="comments"  id="inputpic_url" cols="25" rows="1" dir="rtl"></textarea>
+	<textarea name="comments"  id="inputpic_url" cols="25" rows="1" dir="ltr"></textarea>
 
 <br/>
 
@@ -93,24 +93,27 @@ add picture with link
 
 <h1>Please add simulator for the recipe</h1>
 <br>
-<br>
 
-
-<div dir="ltr" style="position:absolute; top:1400px; left:20%;">
-<h3 >If this step need timer, <p>
- please insert how much time needs<p> (in minutes)  <span><input id="inputTime" placeholder="0" size="3"   ></span></h3>  
-
-</div>
-
-<textarea id="inputStep" cols="25" rows="5" dir="ltr"></textarea>
-<p>
-<p>
-
-
-
-<input type="button" id="submitStep" value="Add New step"  >
-
-
+<table style="width:100%">
+  <tr>
+    <td>
+		<textarea id="inputStep" cols="25" rows="5" dir="ltr"></textarea>
+		<p>
+		<p>
+	</td>
+	<td>
+		<div dir="ltr" ">
+		<h3 >If this step need timer, <p>
+		please insert how much time needs<p> (in minutes)  <span><input id="inputTime" placeholder="0" size="3"   ></span></h3>  
+		</div>
+	</td>
+  </tr>
+  <tr>
+	<td>
+		<input type="button" id="submitStep" value="Add New step">
+	</td>
+  </tr>
+</table>
 <br>
 
 <br>

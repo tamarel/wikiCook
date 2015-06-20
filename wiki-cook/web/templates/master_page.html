@@ -37,10 +37,10 @@
 <!-- header -->
 {% block menuup %}
    
-<div style="">		
+<div style="" >		
 	<b>	
 		{% if user %}
-			Hi, {{user}} <a href="{{logoutUrl}}">Logout</a>
+			Hi, {{user}} <a href="{{logoutUrl}}" >Logout</a>
 		
 		{% else %}
 			Hi, guest <a href="{{loginUrl}}">Login</a>
@@ -71,7 +71,7 @@
 		<div>
 			<div>
 			
-				<p><font size="+1" color="red">most viewed</a>
+				<p><font size="+1" color="white">Most viewed</a>
 				<br ><br />
 				<ul id="featured">
 					{% for i in most_views %}
@@ -87,7 +87,7 @@
 			</div>
 			
 			<div>
-				<h5>שתפו</h5>
+				<h5>Share</h5>
 				<a href="http://www.facebook.com" target="_blank" id="facebook">Facebook</a>
 			</div>
 			<br ><br/>
