@@ -22,7 +22,7 @@
 	<div class="body">
 	
 		<div>
-				<div class="header" dir="rtl" >
+				<div class="header" dir="ltr" >
 				<ul>
 					<li class="current">
 						<a href="home">Home</a>
@@ -45,53 +45,89 @@
 			</div>
 			<div class="body">
 				<div>
-					<a  href="recipes"><img src="/static/img/pork-barbeque.jpg" alt="Image" height="125%" width="125%"></a>
+					<a  href="recipes"><img src="/static/img/ttt.png" alt="Image" height="125%" width="155%"></a>
 				</div>
-				<ul>
-					<li class="current">
-						<a href="recipes">     <img    src="/static/img/holi-turkey.jpg" alt="Image"></a>
-						<div>
-							<font size="4" color="gray">מתכונים בשריים</font>
-							<p>
-								לחצו על התמונה והתחילו 
-							</p>
-						</div>
-					</li>
-					<li>
-						<a href="recipes"><img src="/static/img/fruits-and-bread.jpg" alt="Image"></a>
-						<div>
-							<font size="4" color="gray">מתכונים פרווה</font>
-							<p>
-								לחצו על התמונה והתחילו 
-							</p>
-						</div>
-					</li>
-					<li>
-						<a href="recipes"><img src="/static/img/dessert.jpg" alt="Image"></a>
-						<div >
-							<font size="4" color="gray">מתכוניים חלביים</font> 
-							<p>
-								לחצו על התמונה והתחילו 
-							</p>
-						</div>
-					</li>
-				</ul>
 			</div>
-			<div class="footer" dir="rtl" >
+			<div class="footer" dir="ltr" >
 				<ul>
 					<li>
-						<font size="5" color="gray">קינוחים מנצחים</font> 
+						<font size="5" color="gray" >Delicous deserts</font> 
 							<br></br>
-						<a href="recipes"><img src="/static/img/featured.jpg" alt="Image"></a>
+						<div id="changePic">
+						  <img id="myImage" src="/static/img/featured.jpg" alt="Image" height="285%" width="48%"/>
+						</div>
 					</li>
 					<li>
-						<font size="5" color="gray">מנות מנצחות</font> 
+						<font size="5" color="gray">Delicous meals</font> 
 							<br></br>
-						<a href="recipes"><img src="/static/img/a-z.jpg" alt="Image"></a>
+						<div id="changePic">
+						  <img id="myImage2" src="/static/img/a-z.jpg" alt="Image" height="285%" width="48%"/>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
+
+		<script>
+			var images = new Array ('/static/img/featured.jpg', '/static/img/6.jpg', '/static/img/7.jpg', '/static/img/8.jpg', '/static/img/9.jpg', '/static/img/10.jpg');
+			var index = 1;
+			 
+			function rotateImage()
+			{
+			  $('#myImage').fadeOut('fast', function() 
+			  {
+				$(this).attr('src', images[index]);
+				
+				$(this).fadeIn('fast', function() 
+				{
+				  if (index == images.length-1)
+				  {
+					index = 0;
+				  }
+				  else
+				  {
+					index++;
+				  }
+				});
+			  });
+			} 
+			 
+			$(document).ready(function()
+			{
+			  setInterval (rotateImage, 4000);
+			});
+		</script>
+		
+		<script>
+			var images2 = new Array ('/static/img/a-z.jpg', '/static/img/1.jpg', '/static/img/2.jpg', '/static/img/3.jpg', '/static/img/4.jpg', '/static/img/5.jpg');
+			var index2 = 1;
+			 
+			function rotateImage2()
+			{
+			  $('#myImage2').fadeOut('fast', function() 
+			  {
+				$(this).attr('src', images2[index2]);
+				
+				$(this).fadeIn('fast', function() 
+				{
+				  if (index2 == images2.length-1)
+				  {
+					index2 = 0;
+				  }
+				  else
+				  {
+					index2++;
+				  }
+				});
+			  });
+			} 
+			 
+			$(document).ready(function()
+			{
+			  setInterval (rotateImage2, 5000);
+			});
+		</script>
+		
 				{% endblock %}
 		{% block site %}
 		{{ block.super }}

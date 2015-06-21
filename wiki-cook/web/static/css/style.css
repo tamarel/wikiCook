@@ -1,6 +1,6 @@
 /* Website template by freewebsitetemplates.com */
 body {
-	background: url(/static/img/5555.jpg) repeat;
+	background: url(/static/img/4444.jpg);
 	color: #6c5b37;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
@@ -9,7 +9,6 @@ body {
 	padding: 0;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	
 }
 #user_header {
 	background:#2EB8E6;
@@ -56,7 +55,7 @@ div.header {
 	height: 145px;
 	margin: 0 auto;
 	width: 200px;
-	font-size: 4px;
+
 	
 }
 div.header div {
@@ -78,7 +77,7 @@ div.header form {
 	width: 434px;
 }
 div.search form input#search {
-	background: #white;
+	background: #b48d6f;
 	border: 0;
 	color: #707476;
 	
@@ -112,7 +111,7 @@ div.body div:first-child {
 	width: 716px;
 }
 div.body div:first-child div.header {
-	background: #2EB8E6;
+	background: #b48d6f;
 	
 	height: 35px;
 	padding: 7px 0 0 8px;
@@ -168,7 +167,7 @@ div.body div:first-child div.body ul {
 }
 div.body div:first-child div.body ul li {
 	background: url(/static/img/bg-separator.jpg) no-repeat left 10px;
-	color: #fffffd;
+	color: black;
 	float: left;
 	margin: 0 0 0 1px;
 	overflow: hidden;
@@ -530,7 +529,7 @@ div.body div#content {
 	width: 710px;
 }
 div.body div#content div {
-	background:  #f0ece3 url(/static/img/bg-content-bottom.gif) no-repeat center bottom;
+	background:  #F7F1EA url(/static/img/bg-content-bottom.gif) no-repeat center bottom;
 	border-radius: 0;
 	height: auto;
 	padding: 13px 0 36px;
