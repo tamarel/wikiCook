@@ -87,8 +87,7 @@ function showNextStep() {
     if(current_step < steps.length) {
 		if ( steps[current_step]['timer'] != ''){
 			$('#steps').append('<div><font color: size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
-			$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.png);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font></div><p><b>');				
-			
+			$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.jpg);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font></div><p><b>');				
 			min =steps[current_step]['timer']%60 ;
 			hour = parseInt(steps[current_step]['timer']/60);
 			current_step++;
@@ -192,7 +191,9 @@ function resetIt() {
 <div id="steps">
     
 </div>
-<input  id="next_step" type="image" src="/static/img/next.png"  width="200" height="100" />
+<br>
+<br>
+<input  id="next_step"  type="image" src="/static/img/next.png"  width="200" height="100" />
 
 			
 			
