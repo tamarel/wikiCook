@@ -13,10 +13,17 @@ class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
 		user = User.checkUser()
+		most_recipes = Recipe.try_get_most_viewed()
+		
+		if (most_recipes):
+				
+			template_params['most_views'] = most_recipes	
+			
 		if not user:
 			template_params['loginUrl'] = User.loginUrl()
 
 		else:
+			Recipe.deleterecipes(self.request.get('nameold'))
 			template_params['user'] = user.email
 			template_params['logoutUrl'] = user.logoutUrl()
 			recipe = Recipe();
@@ -27,18 +34,11 @@ class IndexHandler(webapp2.RequestHandler):
 			recipe.pic_url = self.request.get('pic_url')
 			recipe.recipe_count=0
 			recipe.user = user.email
-			if self.request.get('nameRecipe'):
-				recipe.put()
+			recipe.put()
 			
-		most_recipes = Recipe.try_get_most_viewed()
-		
-		if (most_recipes):
-				
-			template_params['most_views'] = most_recipes
-		
-		html = template.render("web/templates/addRecipes.html", template_params)
+		html = template.render("web/templates/recipeofuser.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/addrecipes', IndexHandler)
+	('/save', IndexHandler)
 ], debug=True)

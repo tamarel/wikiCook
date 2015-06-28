@@ -14,9 +14,7 @@ handlers:
 
 - url: /
   script: web.pages.home.app
-  
 
-  
 - url: /index
   script: web.pages.index.app
    
@@ -56,7 +54,11 @@ handlers:
 - url: /sendcontactus
   script: web.pages.about.app
  
+- url: /editrecipe
+  script: web.pages.editrecipe.app
 
+- url: /save
+  script: web.pages.save.app
   
 libraries:
 - name: webapp2

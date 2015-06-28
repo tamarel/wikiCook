@@ -50,14 +50,14 @@
 						<ul>
 							<li>
 							
-								<a href='/featured?myvar={{i.0}}'>{{i.0}} </a>
+								<a href='/featured?myvar={{i.0}}'><div class="link">{{i.0}}</div> </a>
 								<br>	
 									<img src="{{i.1}}" style="width:28%; height:54%;"  id="src_recipe"/>
 								</br>
 								
 								<br>
 									<button id="deleteRecipe" style="color:black"  onClick="deleteRecipe('{{i.0}}' , confirm('Are you sure you want to delete ' + '{{i.0}} ' + '?') )">Delete</button>
-									<button id="Edit" style="color:black" value="Reset">Edit</button>
+									<button id="Edit" style="color:black" value="Reset" onclick="location.href = '/editrecipe?myvar={{i.0}}';">Edit</button>
 							
 								</br>
 							</li>

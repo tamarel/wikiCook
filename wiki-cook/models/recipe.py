@@ -6,7 +6,7 @@ class Recipe(ndb.Model):
 	user = ndb.StringProperty()
 	nameRecipe = ndb.StringProperty()
 	ingredients = ndb.TextProperty()
-	typeRecipe = ndb.StringProperty() # חלביבשרי
+	typeRecipe = ndb.StringProperty() 
 	step = ndb.TextProperty()
 	pic_url=ndb.TextProperty()
 	recipe_count=ndb.IntegerProperty()

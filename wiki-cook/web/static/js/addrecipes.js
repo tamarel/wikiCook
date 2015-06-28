@@ -4,6 +4,8 @@ $(function() {
 	
 	$('#submitSimulator').on('click', submitRcipeTRY);	
 	$('#submitStep').on('click', addStepToList);	
+	$('#show').on('click', show);
+	$('#hide').on('click', hide);
 	$('#inputStep').on('keyup', function(e) {	
 		if(e.keyCode === 13) {
 			submitSimulator();
@@ -13,7 +15,23 @@ $(function() {
 
 
 
+
+
+function show() {
+    $('#overlay').removeClass('hidden');
+}
+
+function hide() {
+    $('#overlay').addClass('hidden');
+}
+              
+            
+			
+			
 var list_of_step = [];
+
+
+
 
 function addStepToList() {
 
@@ -68,6 +86,54 @@ function deleteFromList(index) {
 	}
 }
 
+function submitChange(nameold) {
+	
+	var nameRecipe = $('#inputNameRecipe').val(); 
+	var ingredients = $('#inputIngredients').val(); 
+	var typeRecipe =  $('#inputType').val(); 
+	
+	var pic_url =  $('#inputpic_url').val();
+	
+	if (nameRecipe.length == 0 || ingredients.length == 0  )
+	{
+		alert("must enter all the field\n");
+		return;
+	}
+	
+	if (pic_url.length == 0)
+		pic_url = "http://www.designofsignage.com/application/symbol/building/image/600x600/no-photo.jpg"
+	
+	list_of_step1 = JSON.stringify(list_of_step);
+
+	
+	
+	deleteRecipe(nameRecipe);
+	$.ajax({
+		url:'/save',
+		type:'GET',
+		dataType:'json',
+		data:{nameold:nameold,nameRecipe:nameRecipe, ingredients:ingredients, typeRecipe:typeRecipe , list_of_step:list_of_step1 , pic_url:pic_url},
+		success:function(data, status, xhr) {
+			alert("susses to add simulator ");
+			location.reload();
+			
+		},
+		error:function(xhr, status, error) {
+		alert(" added the recipe successfully!\n");
+		newDoc();
+		return;
+		}
+			
+	});			
+	
+}
+
+function newDoc() 
+{
+	window.location.assign("http://wi-ki1.appspot.com/recipeofuser")
+}
+
+
 function submitRcipeTRY() {
 	var nameRecipe = $('#inputNameRecipe').val(); 
 	var ingredients = $('#inputIngredients').val(); 
@@ -84,14 +150,19 @@ function submitRcipeTRY() {
 	if (pic_url.length == 0)
 		pic_url = "http://www.designofsignage.com/application/symbol/building/image/600x600/no-photo.jpg"
 	
-	list_of_step = JSON.stringify(list_of_step);
+	list_of_step1 = JSON.stringify(list_of_step);
 	$('#inputNameRecipe').val("");
-	 $('#inputIngredients').val(""); 
+	$('#inputIngredients').val(""); 
+	
+	list_of_step=[];
+	var dom = document.getElementById('box');
+	$("#box").empty();
+	dom.insertAdjacentHTML('beforeend','<col width="300px" /><col width="130px" /><col width="30px" /><tr><td><h3>Step</h3></td><td><h3>timer</h3></td> </tr>');
 	$.ajax({
 		url:'/addrecipes',
 		type:'GET',
 		dataType:'json',
-		data:{nameRecipe:nameRecipe, ingredients:ingredients, typeRecipe:typeRecipe , list_of_step:list_of_step , pic_url:pic_url},
+		data:{nameRecipe:nameRecipe, ingredients:ingredients, typeRecipe:typeRecipe , list_of_step:list_of_step1 , pic_url:pic_url},
 		success:function(data, status, xhr) {
 			alert("susses to add simulator ");
 			location.reload();
@@ -139,6 +210,4 @@ function submitSimulator() {
 	
 	
 }
-
-
 

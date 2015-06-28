@@ -32,7 +32,7 @@
 					<li>
 						<a href="recipes">Recipes</a>
 					</li >
-					<li class="current" ydir="rtl">
+					<li dir="rtl">
 						<a href="addrecipes">Add recipe</a>
 					</li>
 					<li>
@@ -56,7 +56,7 @@
 						<br>
 					
 						Recipe name
-<textarea name="comments" id="inputNameRecipe" cols="25" rows="1"></textarea>
+<textarea name="comments" id="inputNameRecipe" cols="25" rows="2">{{name_recipe}}</textarea>
 
 
 <br>
@@ -72,22 +72,14 @@
 <br>
 <br>
 <form method="post" action="">
-<textarea name="comments" dir="ltr"  id="inputIngredients" cols="45" rows="10">
-Enter list of ingredients , each ingredient in a seperate row
-
-Example:
-
-Spoon of sugar
-Cup of oil
-....
-</textarea><br>
+<textarea name="comments" dir="ltr"  id="inputIngredients" cols="45" rows="10">{{ingredients}}</textarea><br>
 
 
 
 <br>
 add picture with link
 
-	<textarea name="comments"  id="inputpic_url" cols="25" rows="1" dir="ltr"></textarea>
+	<textarea name="comments"  id="inputpic_url" cols="25" rows="2" dir="ltr">{{pic_url}}</textarea>
 
 <br/>
 
@@ -137,7 +129,7 @@ add picture with link
 						</table>
 						
 <div  dir="center">
-<button id="submitSimulator">Submit</button>
+<button id="submitChange" onClick="submitChange('{{name_recipe}}')">Save changes</button>
 
 
 </div>
@@ -149,7 +141,27 @@ add picture with link
 							
 							
 		
+<script>
+	var list_of_step= {{recipeStep|safe }}
+	
+	
+	
+	var dom = document.getElementById('box');
+	$("#box").empty();
+	dom.insertAdjacentHTML('beforeend','<col width="300px"/><col width="130px" /><col width="30px" /><tr><td><h3>Step</h3></td><td><h3>timer</h3></td> </tr>');
+	for (i = 0; i < list_of_step.length; ++i)
+	{
+		if ( list_of_step[i][1]!=""){
+	dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] +'(min)' + '</td>'
+	+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
+	}
+	else {
+	dom.insertAdjacentHTML('beforeend','<td>'+ list_of_step[i][0] + '</td>' + '<td>' +list_of_step[i][1] + '</td>'
+	+'<td><img src="/static/img/deleteButton.jpg" onclick=deleteFromList('+i+') valign="bottom"></td></p>')
+	}
+	}
 
+</script>
 		
 							
 							

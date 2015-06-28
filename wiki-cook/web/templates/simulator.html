@@ -46,6 +46,7 @@
 					</li>
 				</ul>
 			</div>
+				{% if user %}	
 			<div class="body">
 				<div id="content" >
 				
@@ -78,7 +79,7 @@ function loadSteps() {
 	for ( var i =0 ;  i < step.length ; i++) {
 		steps[i]= {"text":step[i][0] , "timer":step[i][1]}  ;
 	}
-	
+	return;
 
 };
 
@@ -87,10 +88,11 @@ function showNextStep() {
     if(current_step < steps.length) {
 		if ( steps[current_step]['timer'] != ''){
 			$('#steps').append('<div><font color: size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
-			$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.jpg);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font></div><p><b>');				
+			$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.jpg);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font><p><b></div><br>');				
 			min =steps[current_step]['timer']%60 ;
 			hour = parseInt(steps[current_step]['timer']/60);
 			current_step++;
+		
 			resetIt();
 			
 		
@@ -98,23 +100,65 @@ function showNextStep() {
 		else {
 			
 			$('#steps').append('<div><font size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text'] +'</font></div>');
+			
 			current_step++;
+			
 		}
         
+		
     }
     else {
-        alert('You finish!!!');
+		$('#steps').append('<div><input id="finish_step" type="image" src="/static/img/finish.png"  width="200" height="100" onclick="newDoc()" /></div>');
+		hide();
 		return;
     }
+	
+	return;
 }
+function newDoc() 
+{
+	window.location.assign("http://wi-ki1.appspot.com/featured?myvar={{name_recipe}}")
+}
+
+function showStartStep() 
+{
+		$('#steps').append('<div><input  id="start_step"  type="image" src="/static/img/start.png"  width="200" height="100" /></div>');
+		return;
+}
+
         
 $(function() {
-        loadSteps();
-        $('#next_step').on('click', showNextStep);
+	hide();
+	if(current_step == 0) 
+	{
+		showStartStep();
+		$('#start_step').on('click', show);
+		$('#start_step').on('click', disabledStart);	
+		$('#start_step').on('click', showNextStep);
+	
+		
+	}
+    loadSteps();
+    $('#next_step').on('click', showNextStep);
 })
 
+function disabledStart()
+{
+	document.getElementById("start_step").disabled = true;
+	return;
+}
 
-		
+function show()
+{
+	document.getElementById("next_step").style.visibility="visible";
+	return;
+}
+
+function hide(){
+	document.getElementById("next_step").style.visibility="hidden";
+	return;
+}
+
 
 <!-- Copyright 2001, Sandeep Gangadharan -->
 <!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
@@ -193,6 +237,7 @@ function resetIt() {
 </div>
 <br>
 <br>
+
 <input  id="next_step"  type="image" src="/static/img/next.png"  width="200" height="100" />
 
 			
@@ -204,8 +249,46 @@ function resetIt() {
 					</div>
 				</div>
 			</div>
+		
+		
+						{% else %}
+			
+		<div class="body">
+		
+				
+	
+		
+	
+		<div id="overlay" class="hidden">
+		<center>
+			<p><p><p><br>
+			<br>
+			<br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br>
+			<h1 style="color:white">Welcome to wikiCook.<br>
+		<p>
+		to watch this page you need to be logged in
+		<p>
+		<p>
+		<br>
+			<button id="hide" style="   border-radius: 25px;  border: 2px solid #a1a1a1;  padding: 10px 40px;   no-repeat; text-align: center;  text-size:10px;  width:130px;"><b>Not now!!!!</b></button><br>
+		<img id="gconnect" src="/static/img/glogin.png" onclick="location.href='{{loginUrl}}'" alt="Connect with Google">
+
+			</h1>
+		</center>
 		</div>
-				{% endblock %}
+			<script>
+		show();
+	</script>
+			
+			
+	
+			</div>
+
+{% endif %}
+</div>	
+	{% endblock %}
+	
 		{% block site %}
 		{{ block.super }}
 			{% endblock %}

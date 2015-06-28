@@ -15,8 +15,7 @@ class IndexHandler(webapp2.RequestHandler):
 						
 			
 			template_params['loginUrl'] = User.loginUrl()
-			self.redirect('/index')
-			return
+
 			
 		else:
 			template_params['logoutUrl'] = User.logoutUrl()
@@ -28,10 +27,10 @@ class IndexHandler(webapp2.RequestHandler):
 		
 			template_params['recipeStep'] = details.step 
 			
-			most_recipes = Recipe.try_get_most_viewed()
-			if (most_recipes):
+		most_recipes = Recipe.try_get_most_viewed()
+		if (most_recipes):
 				
-				template_params['most_views'] = most_recipes
+			template_params['most_views'] = most_recipes
 				
 		html = template.render("web/templates/simulator.html", template_params)
 		self.response.write(html)
