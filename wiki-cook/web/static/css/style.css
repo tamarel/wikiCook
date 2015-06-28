@@ -14,6 +14,25 @@ body {
 	background:#2EB8E6;
 }
 
+.hidden {
+    display:none;
+}
+
+.link
+{
+	color: #993333;
+	text-decoration: none;
+	background-color: none;
+}
+#overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.5);
+    padding:50px;
+}
 
 a {
 	outline: none;
@@ -154,7 +173,7 @@ div.body div:first-child div.body {
 div.body div:first-child div.body div {
 	background: url(/static/img/bg-gallery.png) repeat-y;
 	border-radius: 8px 8px 0 0;
-	height: 427px;
+	/*height: 427px;*/
 }
 div.body div:first-child div.body div a img {
 	margin: 1px 1px 0 4px;
