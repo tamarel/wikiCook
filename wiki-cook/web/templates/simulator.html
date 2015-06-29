@@ -172,15 +172,19 @@ function stopwatch(text) {
    sec--;
   if (sec == 0) {
    sec = 59;
+   if (min!=0){
    min = min - 1; }
+   }
   else {
    min = min; }
    
-  if (min == 0 && sec ==0 && hour==0 ) {
+  if (min == 0 && sec ==1 && hour==0 ) {
 	alert("time is over");
 	min=0;
 	sec=0;
 	hour=0;
+	SD=window.setTimeout("stopwatch();", 1000);
+	return;
 	}
    
    if (min == 0 && sec ==1 && hour!=0 ) {

@@ -21,8 +21,8 @@ class User(ndb.Model):
 	
 	#generates a url at which the user can login, and then will be redirected back to his original location
 	@staticmethod
-	def loginUrl():
-		return users.create_login_url('/connect')
+	def loginUrl(mypage):
+		return users.create_login_url('/'+mypage)
 	
 	#generates a url at which the user can logout, and then will be redirected back to his original location
 	@staticmethod

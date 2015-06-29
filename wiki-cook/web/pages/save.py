@@ -20,7 +20,7 @@ class IndexHandler(webapp2.RequestHandler):
 			template_params['most_views'] = most_recipes	
 			
 		if not user:
-			template_params['loginUrl'] = User.loginUrl()
+			template_params['loginUrl'] = User.loginUrl('save')
 
 		else:
 			Recipe.deleterecipes(self.request.get('nameold'))

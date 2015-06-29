@@ -13,7 +13,7 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			
-			template_params['loginUrl'] = User.loginUrl()
+			template_params['loginUrl'] = User.loginUrl('recipeofuser')
 
 		else:
 			all_recipes = Recipe.getRecipeByUser(user)

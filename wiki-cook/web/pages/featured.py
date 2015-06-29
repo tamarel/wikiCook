@@ -17,7 +17,7 @@ class IndexHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			
-			template_params['loginUrl'] = User.loginUrl()
+			template_params['loginUrl'] = User.loginUrl('featured')
 		else:
 			template_params['user'] = user.email
 			template_params['logoutUrl'] = User.logoutUrl()
