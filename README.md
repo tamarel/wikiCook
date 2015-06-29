@@ -42,6 +42,6 @@ python + css + HTML + datastore <br>
 
 
 <b>wiki-Cook web site</b><br>
-[wiki-cook](https://wiki-cook.appspot.com)
+[wiki-cook](https://wi-ki1.appspot.com)
 <br>
 
