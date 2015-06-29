@@ -88,13 +88,31 @@ function showNextStep() {
     if(current_step < steps.length) 
 	{
 		if ( steps[current_step]['timer'] != ''){
-			$('#steps').append('<div><font color: size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
-			$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.jpg);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font><p><b></div><br>');				
+		
+		
+			if(current_step + 1 == steps.length)
+			{
+				hide();
+				$('#steps').append('<div><font color: size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
+				$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.jpg);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font><p><b></div><br>');				
+				$('#steps').append('<div><input id="finish_step" type="image" src="/static/img/finish.png"  width="200" height="100" onclick="newDoc()" /></div>');
+			}
+			else
+			{
+				$('#steps').append('<div><font color: size="4">'+'Step '+(current_step+1)+': ' +steps[current_step]['text']+'</font></div>');
+				$('#steps').append('<div><b><font size="2" style=" border: 2px solid #a1a1a1;    padding: 10px 40px;     background: url(/static/img/46.jpg);    width: 300px;    border-radius: 25px;" >'+'this step needs timer press start when you ready ('+ steps[current_step]['timer'] +' minutes)'+'</font><p><b></div><br>');				
+
+			}
+			
 			min =steps[current_step]['timer']%60 ;
 			hour = parseInt(steps[current_step]['timer']/60);
 			current_step++;
-		
 			resetIt();
+			
+			if(current_step == steps.length)
+			{
+				return;
+			}
 			
 		}
 		else {
