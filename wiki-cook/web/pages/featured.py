@@ -13,7 +13,7 @@ class IndexHandler(webapp2.RequestHandler):
 		
 		
 		template_params = {}
-		
+		user = User.connect()
 		user = User.checkUser()
 		if not user:
 			

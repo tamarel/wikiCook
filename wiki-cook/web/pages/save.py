@@ -12,6 +12,7 @@ class IndexHandler(webapp2.RequestHandler):
 
 	def get(self):
 		template_params = {}
+		user = User.connect()
 		user = User.checkUser()
 		most_recipes = Recipe.try_get_most_viewed()
 		

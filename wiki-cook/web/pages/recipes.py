@@ -10,6 +10,7 @@ import json
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
 		template_params = {}
+		user = User.connect()
 		user = User.checkUser()
 		
 		if not user:
