@@ -14,7 +14,7 @@ class IndexHandler(webapp2.RequestHandler):
 		if not user:
 						
 			
-			template_params['loginUrl'] = User.loginUrl('simulator')
+			template_params['loginUrl'] = User.loginUrl('simulator?myvar='+self.request.get('myvar'))
 
 			
 		else:
