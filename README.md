@@ -1,4 +1,6 @@
 # wikiCook
+
+[![Join the chat at https://gitter.im/tamarel/wikiCook](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tamarel/wikiCook?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 web application for cook learning 
 
 <p><b>Repository for wikiCook Project</b></p>
